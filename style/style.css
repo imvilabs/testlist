@@ -1,3 +1,25 @@
+body {
+    font-size: 18px;
+    padding: 20px;
+  }
+  
+  /* För mobiler */
+  @media (max-width: 768px) {
+    body {
+        width: 80%;
+      font-size: 16px;
+      padding: 10px;
+    }
+  }
+  
+  /* För små mobiler */
+  @media (max-width: 480px) {
+    body {
+      font-size: 14px;
+      padding: 5px;
+    }
+  }
+
 header{
     display: flex;
     justify-content: center;
@@ -12,7 +34,7 @@ header{
       
 #table td, #table th {
     border: 2px solid #ddd;
-    padding: 8px;
+    padding-left: 2px;
 }
       
 #table tr:nth-child(even){background-color: #f2f2f2;}
