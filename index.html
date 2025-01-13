@@ -2,178 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
     <link rel="stylesheet" href="./style/style.css">
+    <script src="index.js" defer></script>
     <title>Testpage</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
 </head>
 <body>
     <header>
         <h1>Testsida</h1>
     </header>
     <main>
-        <div>
-            <table id="table">
-                <tr>
-                  <th>Test</th>
-                  <th>Beskrivning</th>
-                  <th>Länk</th>
-                  <th>Mobil</th>
-                  <th>Dator</th>
-                  <th>Pada</th>
-                </tr>
 
-                <tr>
-                    <td id="name">Attention</td>
-                    <td>Adminpanel för vår Attentiontest</td>
-                    <td><a href="http://tests.imvilabs.com/attention">http://tests.imvilabs.com/attention</a></td>
-                    <td></td>
-                    <td>X</td>
-                    <td>X</td>
-                </tr>
-
-                <tr>
-                    <td id="name">MapCog</td>
-                    <td>Adminpanel för Siegbet MapCog</td>
-                    <td><a href="http://tests.imvilabs.com/attention">http://tests.imvilabs.com/attention</a></td>
-                    <td></td>
-                    <td>X</td>
-                    <td>X</td>
-                </tr>
-
-                <tr>
-                    <td id="name">Lästest</td>
-                    <td>Lästest för B/O/M</td>
-                    <td><a href="http://tests.imvilabs.com/lc">http://tests.imvilabs.com/lc</a></td>
-                    <td>X</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td id="name">Lästest</td>
-                    <td>Lästest för Bokstäver</td>
-                    <td><a href="http://tests.imvilabs.com/v2/lc">http://tests.imvilabs.com/v2/lc</a></td>
-                    <td>X</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td id="name">Lästest</td>
-                    <td>Lästest för Ord</td>
-                    <td><a href="http://tests.imvilabs.com/v2/wc">http://tests.imvilabs.com/v2/wc</a></td>
-                    <td>X</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td id="name">Lästest</td>
-                    <td>Lästest för Meningar</td>
-                    <td><a href="http://tests.imvilabs.com/v2/sc">http://tests.imvilabs.com/v2/sc</a></td>
-                    <td>X</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td id="name">Läsförståelse</td>
-                    <td>Läshastighet och Förståelse</td>
-                    <td><a href="http://tests.imvilabs.com/readingspeed">http://tests.imvilabs.com/readingspeed</a></td>
-                    <td></td>
-                    <td>X</td>
-                    <td>X</td>
-                </tr>
-
-                <tr>
-                    <td id="name">Vergensfrågor</td>
-                    <td>Frågor som ställs I appen</td>
-                    <td><a href="http://tests.imvilabs.com/vercence">http://tests.imvilabs.com/vercence</a></td>
-                    <td>X</td>
-                    <td>X</td>
-                    <td>X</td>
-                </tr>
-
-                <tr>
-                    <td id="name">Amblyopitest</td>
-                    <td>Testa om man har Amblyopi</td>
-                    <td><a href="http://tests.imvilabs.com/amblyopi">http://tests.imvilabs.com/amblyopi</a></td>
-                    <td>X</td>
-                    <td>X</td>
-                    <td>X</td>
-                </tr>
-
-                <tr>
-                    <td id="name">Amblyopitest</td>
-                    <td>Enkel bild</td>
-                    <td><a href="http://tests.imvilabs.com/a.jpg">http://tests.imvilabs.com/a.jpg</a></td>
-                    <td>X</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-        </div>
+        <div id="testlist"></div>
 
         <h3>Kommande tester</h3>
-        
-        <div>
-            
-            <table id="table">
-                <tr>
-                  <th>Test</th>
-                  <th>Beskrivning</th>
-                  <th>Länk</th>
-                  <th>Mobil</th>
-                  <th>Dator</th>
-                  <th>Pada</th>
-                </tr>
-                <tr>
-                    <td>Stroke</td>
-                    <td>Frågor dubbelbild Stroke</td>
-                    <td><a href=""></a></td>
-                    <td>X</td>
-                    <td>X</td>
-                    <td>X</td>
-                </tr>
 
-                <tr>
-                    <td>Vergensfel</td>
-                    <td>Frågor till optikerkunder</td>
-                    <td><a href=""></a></td>
-                    <td>X</td>
-                    <td>X</td>
-                    <td>X</td>
-                </tr>
+        <div id="comingtests"></div>
 
-                <tr>
-                    <td>ADHD</td>
-                    <td>Frågor om ADHD/ADD</td>
-                    <td><a href=""></a></td>
-                    <td>X</td>
-                    <td>X</td>
-                    <td>X</td>
-                </tr>
-
-                <tr>
-                    <td>COVID-utm</td>
-                    <td>Utmattningsfrågor</td>
-                    <td><a href=""></a></td>
-                    <td>X</td>
-                    <td>X</td>
-                    <td>X</td>
-                </tr>
-
-                <tr>
-                    <td>Koncertration</td>
-                    <td>Koncertrationsfrågor</td>
-                    <td><a href=""></a></td>
-                    <td>X</td>
-                    <td>X</td>
-                    <td>X</td>
-                </tr>
-            </table>
-        </div>
     </main>
 </body>
 </html>
