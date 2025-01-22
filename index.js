@@ -70,7 +70,7 @@ const entries = Object.entries(list);
 let table = `<table border="1">
 <thead>
 <tr>
-<th>Test</th>
+<th>Test <br /> (click to copy link)</th>
 <th>Description</th>
 <th>Link</th>
 <th>Mobil</th>
@@ -81,8 +81,8 @@ let table = `<table border="1">
 <tbody>`;
 
 entries.forEach(([key, value]) => {
-    table += `<tr>
-        <td>${key}</td>
+    table += `<tr class="tr">
+        <td class="keyer" data-key="${key}">${key}</td>
         <td>${value.description}</td>
         <td><a href="${value.link}">${value.link}</a></td>
         <td>${value.mobil}</td>
@@ -96,27 +96,40 @@ table += "</tbody></table>";
 const testlist = document.getElementById("testlist").innerHTML=table
 
 
-document.getElementById("testlist").addEventListener("click", (event)=>{
-   console.log("du tryckte på", event.target.innerHTML)
-   let key = event.target.innerHTML
-   console.log(key)
-   if (list[key])
-    {
-    console.log(list[key].link);
-    navigator.clipboard.writeText(list[key].link).then(() => {
+document.getElementById("testlist").addEventListener("click", (event) => {
+    const clickedElement = event.target;
+    if (clickedElement.classList.contains("keyer")) {
+        const key = clickedElement.getAttribute("data-key");
+        if (list[key]) {
+            
+            navigator.clipboard.writeText(list[key].link).then(() => {
                 console.log("Text kopierad!");
+                showPopup(clickedElement);
             }).catch(err => {
                 console.error("Kunde inte kopiera text:", err);
             });
+        }
     }
-    else{
-        (list[key])
-    }
+});
 
 
-})
+function showPopup(targetElement) {
+    const popup = document.getElementById("myPopup");
+    const rect = targetElement.getBoundingClientRect();
+    const offsetX = (rect.width - popup.offsetWidth) / 2;
+    const offsetY = (rect.height - popup.offsetHeight / 2)
 
 
+    popup.style.left = `${rect.left + offsetX}px`;
+    popup.style.top = `${rect.height + offsetY} -25px`;
+
+    popup.classList.add("show");
+
+
+    setTimeout(() => {
+        popup.classList.remove("show");
+    }, 2000);
+};
 
 
 
@@ -173,7 +186,7 @@ let comingTable = `<table id='comingTable' border='1'>
 <tbody>`;
 
 Object.entries(coming).forEach(([key, value]) => {
-    comingTable += `<tr>
+    comingTable += `<tr class="tr">
         <td>${key}</td>
         <td>${value.description}</td>
         <td><a href="${value.link}">${value.link}</a></td>
@@ -187,3 +200,7 @@ comingTable += "</tbody></table>";
 
 const comingtest= document.getElementById("comingtests").innerHTML= comingTable;
 
+// function myFunction() {
+//     const popup = document.getElementById("myPopup");
+//     popup.classList.toggle("show");
+//   }
