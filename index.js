@@ -1,4 +1,4 @@
-
+// List of tests in an object
 const list = {
     Attention: {
         description: "Adminpanel för vår Attentiontest",
@@ -66,7 +66,7 @@ const list = {
 };
 
 const entries = Object.entries(list);
-
+//Creating table
 let table = `<table border="1">
 <thead>
 <tr>
@@ -80,14 +80,15 @@ let table = `<table border="1">
 </thead>
 <tbody>`;
 
+//Adding value
 entries.forEach(([key, value]) => {
     table += `<tr class="tr">
         <td class="keyer" data-key="${key}">${key}</td>
         <td>${value.description}</td>
         <td><a href="${value.link}">${value.link}</a></td>
-        <td>${value.mobil}</td>
-        <td>${value.dator}</td>
-        <td>${value.padda}</td>
+        <td class="tdMobil">${value.mobil}</td>
+        <td  class="tdDator">${value.dator}</td>
+        <td  class="tdPadda">${value.padda}</td>
     </tr>`;
 });
 
@@ -95,7 +96,7 @@ table += "</tbody></table>";
 
 const testlist = document.getElementById("testlist").innerHTML=table
 
-
+//Copying link
 document.getElementById("testlist").addEventListener("click", (event) => {
     const clickedElement = event.target;
     if (clickedElement.classList.contains("keyer")) {
@@ -103,8 +104,7 @@ document.getElementById("testlist").addEventListener("click", (event) => {
         if (list[key]) {
             
             navigator.clipboard.writeText(list[key].link).then(() => {
-                console.log("Text kopierad!");
-                showPopup(clickedElement);
+                console.log("Länk kopierad!");
             }).catch(err => {
                 console.error("Kunde inte kopiera text:", err);
             });
@@ -112,27 +112,7 @@ document.getElementById("testlist").addEventListener("click", (event) => {
     }
 });
 
-
-function showPopup(targetElement) {
-    const popup = document.getElementById("myPopup");
-    const rect = targetElement.getBoundingClientRect();
-    const offsetX = (rect.width - popup.offsetWidth) / 2;
-    const offsetY = (rect.height - popup.offsetHeight / 2)
-
-
-    popup.style.left = `${rect.left + offsetX}px`;
-    popup.style.top = `${rect.height + offsetY} -25px`;
-
-    popup.classList.add("show");
-
-
-    setTimeout(() => {
-        popup.classList.remove("show");
-    }, 2000);
-};
-
-
-
+//Coming list as an object
 const coming = {
     Stroke: {
         description: "Frågor dubbelbild Stroke",
@@ -171,7 +151,7 @@ const coming = {
     },
 };
 
-
+//Creating table
 let comingTable = `<table id='comingTable' border='1'>
 <thead>
 <tr>
@@ -185,22 +165,18 @@ let comingTable = `<table id='comingTable' border='1'>
 </thead>
 <tbody>`;
 
+//Adding values
 Object.entries(coming).forEach(([key, value]) => {
     comingTable += `<tr class="tr">
-        <td>${key}</td>
+        <td class="keyer" data-key="${key}">${key}</td>
         <td>${value.description}</td>
         <td><a href="${value.link}">${value.link}</a></td>
-        <td>${value.mobil}</td>
-        <td>${value.dator}</td>
-        <td>${value.padda}</td>
+        <td class="tdMobil">${value.mobil}</td>
+        <td  class="tdDator">${value.dator}</td>
+        <td  class="tdPadda">${value.padda}</td>
     </tr>`;
 });
 
 comingTable += "</tbody></table>";
 
 const comingtest= document.getElementById("comingtests").innerHTML= comingTable;
-
-// function myFunction() {
-//     const popup = document.getElementById("myPopup");
-//     popup.classList.toggle("show");
-//   }

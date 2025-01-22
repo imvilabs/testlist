@@ -9,6 +9,49 @@ body {
     font-size: 16px;
     padding: 10px;
   }
+  
+  table {
+    width: 80%;
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 8px;
+    text-align: left;
+  }
+
+  .tabell {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  td, th {
+    display: block;
+    text-align: left;
+  }
+  
+  td {
+    padding: 8px;
+  }
+
+  td.keyer {
+    margin-top: 15px;
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+  .tdMobil::before {
+    content: "Mobil: ";
+    color: rgb(0, 0, 0);
+  }
+  .tdDator::before {
+    content: "Dator: ";
+    color: rgb(0, 0, 0);
+  }
+  .tdPadda::before {
+    content: "Padda: ";
+    color: rgb(0, 0, 0);
+  }
+  
 }
 
 @media (max-width: 480px) {
@@ -16,6 +59,7 @@ body {
     font-size: 12px;
     padding: 5px;
   }
+  
 }
 
 header {
